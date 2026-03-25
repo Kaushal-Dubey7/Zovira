@@ -91,13 +91,6 @@ This project can be deployed easily on platforms like **Render**:
 * Add environment variables in dashboard
 
 ---
-
-## 📸 Screenshots
-
-*(Add screenshots of your app here)*
-
----
-
 ## 🤝 Contributing
 
 Contributions are welcome! Feel free to fork the repo and submit a pull request.
