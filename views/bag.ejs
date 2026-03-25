@@ -1,0 +1,159 @@
+<%- include('./partials/header') %>
+<%- include('./partials/flash') %>
+<hr class="border-black my-4">
+<div class="flex justify-center items-center h-20 bg-gray-100 rounded mb-10"> 
+    <p class="text-gray-600">
+  <%=user.fullname %> this item is currently not available for booking. Please check the Shop section to find items that can be booked.
+</p>
+</div>
+    <div class="w-full h-screen flex items-start px-20 py-15">
+        <div class="w-[25%] flex h-screen flex-col items-start">
+            <div class="flex items-center gap-2">
+                <h3>sort by</h3>
+                <form action="/shop">
+                    <select class="border-[1px] px-2 py-1" name="sortby" id="">
+                        <option class="select-disabled"value="popular">Select</option>
+                        <option value="/male">Male Section</option>
+                        <option value="/female">Female Section</option>
+                    </select>
+                </form>
+            </div>
+            <div class="flex flex-col mt-20">
+                <a class="block w-fit mb-2" href="/newCollection">New Collection</a>
+                <a class="block w-fit mb-2" href="/shop">All Products</a>
+                <a class="block w-fit mb-2" href="">Discounted Products</a>
+            </div>
+            <div class="mt-32">
+                <a class="block w-fit mb-2" href="/men">Men's Section </a>
+                <a class="block w-fit mb-2" href="/women">Women's Section</a>
+                <a class="block w-fit mb-2" href="/bags">Bagpacks</a>
+            </div>
+        </div>
+        <div class="w-[75%] flex flex-col gap-5 h-screen">
+            <div class="grid grid-cols-4 gap-6">
+                    <div class="w-60">
+                        <div class="w-full h-52 flex items-center justify-center bg-[#e8e0d5]">
+                            <img class="h-[12rem]" src="images/1bag.png" alt="Leather Tote Bag">
+                        </div>
+                        <div class="flex justify-between bg-[#3b3b3b] items-center px-4 py-4 text-[#ffffff]">
+                            <div>
+                                <h3>Leather Tote Bag</h3>
+                                <h4>₹ 2,999</h4>
+                            </div>
+                            <a class="w-7 h-7 flex items-center text-black justify-center rounded-full bg-white" href="#">
+                                <i class="ri-add-line"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="w-60">
+                        <div class="w-full h-52 flex items-center justify-center bg-[#d6e4f0]">
+                            <img class="h-[12rem]" src="images/2bag.png" alt="Backpack">
+                        </div>
+                        <div class="flex justify-between bg-[#1a3c5e] items-center px-4 py-4 text-[#ffffff]">
+                            <div>
+                                <h3>Urban Backpack</h3>
+                                <h4>₹ 3,499</h4>
+                            </div>
+                            <a class="w-7 h-7 flex items-center text-black justify-center rounded-full bg-white" href="#">
+                                <i class="ri-add-line"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="w-60">
+                        <div class="w-full h-52 flex items-center justify-center bg-[#f0ebe3]">
+                            <img class="h-[12rem]" src="images/3bag 1.png" alt="Sling Bag">
+                        </div>
+                        <div class="flex justify-between bg-[#2d2d2d] items-center px-4 py-4 text-[#ffffff]">
+                            <div>
+                                <h3>Sling Bag</h3>
+                                <h4>₹ 1,499</h4>
+                            </div>
+                            <a class="w-7 h-7 flex items-center text-black justify-center rounded-full bg-white" href="#">
+                                <i class="ri-add-line"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="w-60">
+                        <div class="w-full h-52 flex items-center justify-center bg-[#dce8dc]">
+                            <img class="h-[12rem]" src="images/4bag.png" alt="Duffle Bag">
+                        </div>
+                        <div class="flex justify-between bg-[#2a4a2a] items-center px-4 py-4 text-[#ffffff]">
+                            <div>
+                                <h3>Duffle Bag</h3>
+                                <h4>₹ 4,199</h4>
+                            </div>
+                            <a class="w-7 h-7 flex items-center text-black justify-center rounded-full bg-white" href="#">
+                                <i class="ri-add-line"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="w-60">
+                        <div class="w-full h-52 flex items-center justify-center bg-[#ede8f5]">
+                            <img class="h-[12rem]" src="images/6bag.png" alt="Clutch Bag">
+                        </div>
+                        <div class="flex justify-between bg-[#4a3f6b] items-center px-4 py-4 text-[#ffffff]">
+                            <div>
+                                <h3>Clutch Bag</h3>
+                                <h4>₹ 1,199</h4>
+                            </div>
+                            <a class="w-7 h-7 flex items-center text-black justify-center rounded-full bg-white" href="#">
+                                <i class="ri-add-line"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="w-60">
+                        <div class="w-full h-52 flex items-center justify-center bg-[#fce8d8]">
+                            <img class="h-[12rem]" src="images/5bag.png" alt="Laptop Bag">
+                        </div>
+                        <div class="flex justify-between bg-[#7a3b1e] items-center px-4 py-4 text-[#ffffff]">
+                            <div>
+                                <h3>Laptop Bag</h3>
+                                <h4>₹ 2,799</h4>
+                            </div>
+                            <a class="w-7 h-7 flex items-center text-black justify-center rounded-full bg-white" href="#">
+                                <i class="ri-add-line"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="w-60">
+                        <div class="w-full h-52 flex items-center justify-center bg-[#e5e5e5]">
+                            <img class="h-[12rem]" src="images/7bag.png" alt="Shoulder Bag">
+                        </div>
+                        <div class="flex justify-between bg-[#1c1c1c] items-center px-4 py-4 text-[#ffffff]">
+                            <div>
+                                <h3>Shoulder Bag</h3>
+                                <h4>₹ 2,299</h4>
+                            </div>
+                            <a class="w-7 h-7 flex items-center text-black justify-center rounded-full bg-white" href="#">
+                                <i class="ri-add-line"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="w-60">
+                        <div class="w-full h-52 flex items-center justify-center bg-[#e0ece4]">
+                            <img class="h-[12rem]" src="images/image 80.png" alt="Mini Handbag">
+                        </div>
+                        <div class="flex justify-between bg-[#1e4d2b] items-center px-4 py-4 text-[#ffffff]">
+                            <div>
+                                <h3>Mini Handbag</h3>
+                                <h4>₹ 1,699</h4>
+                            </div>
+                            <a class="w-7 h-7 flex items-center text-black justify-center rounded-full bg-white" href="#">
+                                <i class="ri-add-line"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- End Bags Static Product Cards -->
+
+                    <p class="flex items-center justify-center text-gray-500 ">And Many More Coming Soon...</p>
+            </div>
+        </div>
+    </div>
+    <%- include('./partials/footer') %>

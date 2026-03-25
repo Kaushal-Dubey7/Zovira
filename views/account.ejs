@@ -1,0 +1,432 @@
+<%- include('./partials/header') %>
+<%- include('./partials/flash') %>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+  .profile-wrapper {
+    font-family: 'DM Sans', sans-serif;
+    background: #fafafa;
+    min-height: 100vh;
+    padding: 60px 20px;
+  }
+
+  .profile-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    gap: 28px;
+    align-items: start;
+  }
+
+  /* LEFT CARD */
+  .profile-left {
+    background: #fff;
+    border: 1px solid #e5e5e5;
+    border-radius: 16px;
+    padding: 40px 28px;
+    text-align: center;
+    position: sticky;
+    top: 30px;
+  }
+
+  .avatar-ring {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    border: 3px solid #111;
+    padding: 3px;
+    margin: 0 auto 20px;
+    position: relative;
+  }
+
+  .avatar-ring img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .avatar-badge {
+    position: absolute;
+    bottom: 4px;
+    right: 4px;
+    width: 22px;
+    height: 22px;
+    background: #111;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .avatar-badge svg {
+    width: 10px;
+    height: 10px;
+    fill: #fff;
+  }
+
+  .profile-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #111;
+    margin-bottom: 4px;
+  }
+
+  .profile-email {
+    font-size: 0.85rem;
+    color: #888;
+    font-weight: 400;
+    margin-bottom: 24px;
+    word-break: break-all;
+  }
+
+  .member-badge {
+    display: inline-block;
+    background: #111;
+    color: #fff;
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 5px 14px;
+    border-radius: 20px;
+    margin-bottom: 28px;
+  }
+
+  .divider {
+    height: 1px;
+    background: #f0f0f0;
+    margin: 20px 0;
+  }
+
+  .profile-stat-row {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 28px;
+  }
+
+  .stat-item {
+    text-align: center;
+  }
+
+  .stat-number {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #111;
+  }
+
+  .stat-label {
+    font-size: 0.72rem;
+    color: #aaa;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-top: 2px;
+  }
+
+  .btn-edit {
+    width: 100%;
+    padding: 12px;
+    background: #111;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.88rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    cursor: pointer;
+    transition: background 0.25s, transform 0.2s;
+  }
+
+  .btn-edit:hover {
+    background: #333;
+    transform: translateY(-1px);
+  }
+
+  .btn-logout {
+    width: 100%;
+    padding: 11px;
+    background: transparent;
+    color: #111;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.88rem;
+    font-weight: 500;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: border-color 0.25s, background 0.25s;
+  }
+
+  .btn-logout:hover {
+    border-color: #111;
+    background: #f5f5f5;
+  }
+
+  /* RIGHT SECTION */
+  .profile-right {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+  }
+
+  .info-card {
+    background: #fff;
+    border: 1px solid #e5e5e5;
+    border-radius: 16px;
+    padding: 28px 32px;
+  }
+
+  .card-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #111;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .card-title-icon {
+    width: 32px;
+    height: 32px;
+    background: #f4f4f4;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+  }
+
+  .info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+  }
+
+  .info-field label {
+    display: block;
+    font-size: 0.72rem;
+    font-weight: 500;
+    color: #aaa;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 6px;
+  }
+
+  .info-field p {
+    font-size: 0.92rem;
+    color: #222;
+    font-weight: 400;
+    background: #fafafa;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    padding: 10px 14px;
+  }
+
+  .info-field.full {
+    grid-column: 1 / -1;
+  }
+
+  /* Activity Row */
+  .activity-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+
+  .activity-box {
+    background: #fafafa;
+    border: 1px solid #eee;
+    border-radius: 12px;
+    padding: 20px 16px;
+    text-align: center;
+    transition: border-color 0.2s, transform 0.2s;
+    cursor: pointer;
+    text-decoration: none;
+  }
+
+  .activity-box:hover {
+    border-color: #111;
+    transform: translateY(-2px);
+  }
+
+  .activity-icon {
+    font-size: 1.6rem;
+    margin-bottom: 8px;
+    display: block;
+  }
+
+  .activity-label {
+    font-size: 0.8rem;
+    color: #555;
+    font-weight: 500;
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .profile-container {
+      grid-template-columns: 1fr;
+    }
+
+    .profile-left {
+      position: static;
+    }
+
+    .info-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .activity-row {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .profile-wrapper {
+      padding: 30px 16px;
+    }
+
+    .info-card {
+      padding: 22px 20px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .activity-row {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+</style>
+
+<div class="profile-wrapper">
+  <div class="profile-container">
+
+    <!-- LEFT: Avatar + Stats -->
+    <div class="profile-left">
+      <div class="avatar-ring">
+        <img
+          src="https://imgs.search.brave.com/5JJkpFCQEwHPFzxGmOdBIAcqq0MCOoxbcFWVczlhV98/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9zdGF0/aWMudmVjdGVlenku/Y29tL3N5c3RlbS9y/ZXNvdXJjZXMvdGh1/bWJuYWlscy8wMjgv/NTgyLzg0NS9zbWFs/bC9mdW5ueS1zdXJw/cmlzZWQtY2F0LXdp/dGgtYS1xdWVzdGlv/bmluZy1wb3NlLWEt/Y3V0ZS1raXR0ZW4t/YXNrcy1pbi1zdXJw/cmlzZS13aGVyZS10/aGUtdHJlYXRzLWFy/ZS1nZW5lcmF0ZWQt/YWktcGhvdG8uanBn"
+          alt="Profile Photo"
+        >
+        <div class="avatar-badge">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04a1 1 0 0 0 0-1.41l-2.34-2.34a1 1 0 0 0-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/>
+          </svg>
+        </div>
+      </div>
+
+      <div class="profile-name"><%= user.fullname %></div>
+      <div class="profile-email"><%= user.email %></div>
+      <span class="member-badge">✦ Premium Member</span>
+
+      <div class="divider"></div>
+
+      <div class="profile-stat-row">
+        <div class="stat-item">
+          <div class="stat-number">12</div>
+          <div class="stat-label">Orders</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">4</div>
+          <div class="stat-label">Wishlist</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">2</div>
+          <div class="stat-label">Reviews</div>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <button class="btn-edit">Edit Profile</button>
+      <a href="/logout"><button class="btn-logout">Log Out</button></a>
+    </div>
+
+    <!-- RIGHT: Info + Activity -->
+    <div class="profile-right">
+
+      <!-- Personal Info -->
+      <div class="info-card">
+        <div class="card-title">
+          <span class="card-title-icon">👤</span>
+          Personal Information
+        </div>
+        <div class="info-grid">
+          <div class="info-field">
+            <label>Full Name</label>
+            <p><%= user.fullname %></p>
+          </div>
+          <div class="info-field">
+            <label>Username</label>
+            <p>@<%= user.fullname.toLowerCase().replace(/\s/g, '_') %></p>
+          </div>
+          <div class="info-field full">
+            <label>Email Address</label>
+            <p><%= user.email %></p>
+          </div>
+          <div class="info-field">
+            <label>Phone</label>
+            <p>+91 ••••••••••</p>
+          </div>
+          <div class="info-field">
+            <label>Member Since</label>
+            <p>2024</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Delivery Address -->
+      <div class="info-card">
+        <div class="card-title">
+          <span class="card-title-icon">📍</span>
+          Saved Address
+        </div>
+        <div class="info-grid">
+          <div class="info-field full">
+            <label>Home Address</label>
+            <p>No address saved yet. Add one for faster checkout.</p>
+          </div>
+          <div class="info-field">
+            <label>City</label>
+            <p>—</p>
+          </div>
+          <div class="info-field">
+            <label>Pincode</label>
+            <p>—</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick Actions -->
+      <div class="info-card">
+        <div class="card-title">
+          <span class="card-title-icon">⚡</span>
+          Quick Actions
+        </div>
+        <div class="activity-row">
+          <a class="activity-box" href="/orders">
+            <span class="activity-icon">📦</span>
+            <div class="activity-label">My Orders</div>
+          </a>
+          <a class="activity-box" href="/cart">
+            <span class="activity-icon">🛒</span>
+            <div class="activity-label">My Cart</div>
+          </a>
+          <a class="activity-box" href="/shop">
+            <span class="activity-icon">🛍️</span>
+            <div class="activity-label">Shop Now</div>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<%- include('./partials/footer') %>

@@ -1,0 +1,168 @@
+<%- include('./partials/header') %>
+<%- include('./partials/flash') %>
+<hr class="border-black my-4">
+    <div class="flex justify-center items-center h-20 bg-gray-100 rounded mb-10"> 
+    <p class="text-gray-600">
+  <%=user.fullname %> these items are currently not available for booking. Please visit the Shop section to book available items.
+</p>
+</div>       
+    <div class="w-full h-screen flex items-start px-20 py-15">
+        <div class="w-[25%] flex h-screen flex-col items-start">
+            <div class="flex items-center gap-2">
+                <h3>sort by</h3>
+                <form action="/shop">
+                    <select class="border-[1px] px-2 py-1" name="sortby" id="">
+                        <option class="select-disabled"value="popular">Select</option>
+                        <option value="/male">Male Section</option>
+                        <option value="/female">Female Section</option>
+                    </select>
+                </form>
+            </div>
+            <div class="flex flex-col mt-20">
+                <a class="block w-fit mb-2" href="/newCollection">New Collection</a>
+                <a class="block w-fit mb-2" href="/shop">All Products</a>
+                <a class="block w-fit mb-2" href="">Discounted Products</a>
+            </div>
+            <div class="mt-32">
+                <a class="block w-fit mb-2" href="/men">Men's Section </a>
+                <a class="block w-fit mb-2" href="/women">Women's Section</a>
+                <a class="block w-fit mb-2" href="/bags">Bagpacks</a>
+            </div>
+        </div>
+        <div class="w-[75%] flex flex-col gap-5 h-screen">
+            <div class="grid grid-cols-4 gap-6">
+
+                    <!-- Card 1: Floral Sundress — Blush Rose theme -->
+                    <div class="w-60">
+                        <div class="w-full h-52 flex items-center justify-center ">
+                            <img class="h-[12rem]" src="images/sundress.avif" alt="Floral Sundress">
+                        </div>
+                        <div class="flex justify-between bg-[#880e4f] items-center px-4 py-4 text-[#ffffff]">
+                            <div>
+                                <h3>Floral Sundress</h3>
+                                <h4>₹ 1,899</h4>
+                            </div>
+                            <a class="w-7 h-7 flex items-center text-black justify-center rounded-full bg-white" href="#">
+                                <i class="ri-add-line"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Card 2: Crop Top — Peach & Terracotta theme -->
+                    <div class="w-60">
+                        <div class="w-full h-52 flex items-center justify-center ">
+                            <img class="h-[12rem]" src="images/crop.jpg" alt="Crop Top">
+                        </div>
+                        <div class="flex justify-between bg-[#bf360c] items-center px-4 py-4 text-[#ffffff]">
+                            <div>
+                                <h3>Casual Crop Top</h3>
+                                <h4>₹ 799</h4>
+                            </div>
+                            <a class="w-7 h-7 flex items-center text-black justify-center rounded-full bg-white" href="#">
+                                <i class="ri-add-line"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Card 3: Palazzo Pants — Lavender & Plum theme -->
+                    <div class="w-60">
+                        <div class="w-full h-52 flex items-center justify-center ">
+                            <img class="h-[12rem]" src="images/lehenga.webp" alt="Palazzo Pants">
+                        </div>
+                        <div class="flex justify-between bg-[#4a148c] items-center px-4 py-4 text-[#ffffff]">
+                            <div>
+                                <h3>Floral Lehenga</h3>
+                                <h4>₹ 1,499</h4>
+                            </div>
+                            <a class="w-7 h-7 flex items-center text-black justify-center rounded-full bg-white" href="#">
+                                <i class="ri-add-line"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Card 4: Kurti — Mint & Teal theme -->
+                    <div class="w-60">
+                        <div class="w-full h-52 flex items-center justify-center ">
+                            <img class="h-[12rem]" src="images/kurti.jpg" alt="Ethnic Kurti">
+                        </div>
+                        <div class="flex justify-between bg-[#00695c] items-center px-4 py-4 text-[#ffffff]">
+                            <div>
+                                <h3>Ethnic Kurti</h3>
+                                <h4>₹ 1,299</h4>
+                            </div>
+                            <a class="w-7 h-7 flex items-center text-black justify-center rounded-full bg-white" href="#">
+                                <i class="ri-add-line"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Card 5: Denim Jacket — Ice Blue & Navy theme -->
+                    <div class="w-60">
+                        <div class="w-full h-52 flex items-center justify-center ">
+                            <img class="h-[12rem]" src="images/vneck.webp" alt="Denim Jacket">
+                        </div>
+                        <div class="flex justify-between bg-[#0d47a1] items-center px-4 py-4 text-[#ffffff]">
+                            <div>
+                                <h3>V Neck Top</h3>
+                                <h4>₹ 2,799</h4>
+                            </div>
+                            <a class="w-7 h-7 flex items-center text-black justify-center rounded-full bg-white" href="#">
+                                <i class="ri-add-line"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Card 6: Maxi Skirt — Warm Sand & Chocolate theme -->
+                    <div class="w-60">
+                        <div class="w-full h-52 flex items-center justify-center ">
+                            <img class="h-[12rem]" src="images/suit.webp" alt="Maxi Skirt">
+                        </div>
+                        <div class="flex justify-between bg-[#4e342e] items-center px-4 py-4 text-[#ffffff]">
+                            <div>
+                                <h3>Traditional Suit</h3>
+                                <h4>₹ 1,699</h4>
+                            </div>
+                            <a class="w-7 h-7 flex items-center text-black justify-center rounded-full bg-white" href="#">
+                                <i class="ri-add-line"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Card 7: Co-ord Set — Dusty Rose & Charcoal theme -->
+                    <div class="w-60">
+                        <div class="w-full h-52 flex items-center justify-center ">
+                            <img class="h-[12rem]" src="images/skirt.webp" alt="Co-ord Set">
+                        </div>
+                        <div class="flex justify-between bg-[#37474f] items-center px-4 py-4 text-[#ffffff]">
+                            <div>
+                                <h3>Floral Skirt</h3>
+                                <h4>₹ 2,499</h4>
+                            </div>
+                            <a class="w-7 h-7 flex items-center text-black justify-center rounded-full bg-white" href="#">
+                                <i class="ri-add-line"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Card 8: Overcoat — Cream & Deep Olive theme -->
+                    <div class="w-60">
+                        <div class="w-full h-52 flex items-center justify-center ">
+                            <img class="h-[12rem]" src="/images/overcoat.jpg" alt="Women Overcoat">
+                        </div>
+                        <div class="flex justify-between bg-[#33691e] items-center px-4 py-4 text-[#ffffff]">
+                            <div>
+                                <h3>Overcoat</h3>
+                                <h4>₹ 3,999</h4>
+                            </div>
+                            <a class="w-7 h-7 flex items-center text-black justify-center rounded-full bg-white" href="#">
+                                <i class="ri-add-line"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- End Women's Static Product Cards -->
+
+                    <p class="flex items-center justify-center text-gray-500 ">And Many More Coming Soon...</p>
+            </div>
+        </div>
+    </div>
+    <%- include('./partials/footer') %>

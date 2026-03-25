@@ -1,9 +1,9 @@
 const e = require('express');
 const { default: mongoose } = require('mongoose');
-const mongoose = require('mongoose');
+//const mongoose = require('mongoose');
 
 const productSchema = mongoose.Schema({
-   image: String,
+   image: Buffer,
    name: String,
    price: String,
    discount:{

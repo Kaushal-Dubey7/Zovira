@@ -1,0 +1,33 @@
+<%- include('./partials/header') %>
+    <%- include('./partials/flash') %>
+        <hr class="border-black my-4">
+        <p class="ml-5 mb-4 text-3xl font-helvetica">Heyy, <%=user.fullname %>👋</p>
+        <div class="w-full h-screen flex items-start px-20 py-15">
+            <div class="w-[25%] flex h-screen flex-col items-start">
+                <div class="flex items-center gap-2">
+                    <h3>sort by</h3>
+                    <form action="/shop">
+                        <select class="border-[1px] px-2 py-1" name="sortby" id="">
+                            <option class="select-disabled" value="popular">Select</option>
+                            <option value="/male">Male Section</option>
+                            <option value="/female">Female Section</option>
+                        </select>
+                    </form>
+                </div>
+                <div class="flex flex-col mt-20">
+                    <a class="block w-fit mb-2" href="/newCollection">New Collection</a>
+                    <a class="block w-fit mb-2" href="/shop">All Products</a>
+                    <a class="block w-fit mb-2" href="">Discounted Products</a>
+                </div>
+                <div class="mt-32">
+                    <a class="block w-fit mb-2" href="/men">Men's Section</a>
+                    <a class="block w-fit mb-2" href="/women">Women's Section</a>
+                    <a class="block w-fit mb-2" href="/bags">Bagpacks</a>
+                </div>
+            </div>
+            <div class="flex">
+               <img class="w-full h-full mt-[-3.5rem]" src="/images/coming-soon-promo-background-modern-style_1017-54613.webp" alt="">
+            </div>
+        </div>
+        </div>
+        <%- include('./partials/footer') %>

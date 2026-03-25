@@ -1,0 +1,159 @@
+<%- include('./partials/header') %>
+<%- include('./partials/flash') %>
+<hr class="border-black my-4">
+    <div class="flex justify-center items-center h-20 bg-gray-100 rounded mb-10"> 
+    <p class="text-gray-600">
+  <%=user.fullname %> these item is currently not available for booking. Please check the Shop section to find items that can be booked.
+</p>
+</div>   
+    <div class="w-full h-screen flex items-start px-20 py-15">
+        <div class="w-[25%] flex h-screen flex-col items-start">
+            <div class="flex items-center gap-2">
+                <h3>sort by</h3>
+                <form action="/shop">
+                    <select class="border-[1px] px-2 py-1" name="sortby" id="">
+                        <option class="select-disabled"value="popular">Select</option>
+                        <option value="/male">Male Section</option>
+                        <option value="/female">Female Section</option>
+                    </select>
+                </form>
+            </div>
+            <div class="flex flex-col mt-20">
+                <a class="block w-fit mb-2" href="/newCollection">New Collection</a>
+                <a class="block w-fit mb-2" href="/shop">All Products</a>
+                <a class="block w-fit mb-2" href="">Discounted Products</a>
+            </div>
+            <div class="mt-32">
+                <a class="block w-fit mb-2" href="/men">Men's Section </a>
+                <a class="block w-fit mb-2" href="/women">Women's Section</a>
+                <a class="block w-fit mb-2" href="">Discount</a>
+            </div>
+        </div>
+        <div class="w-[75%] flex flex-col gap-5 h-screen">
+            <div class="grid grid-cols-4 gap-6">
+                    <div class="w-60">
+                        <div class="w-full h-52 flex items-center justify-center ">
+                            <img class="h-[12rem]" src="images/raglan.jpg" alt="Men's Casual Shirt">
+                        </div>
+                        <div class="flex justify-between bg-[#3b3b3b] items-center px-4 py-4 text-[#ffffff]">
+                            <div>
+                                <h3>Raglan</h3>
+                                <h4>₹ 1,299</h4>
+                            </div>
+                            <a class="w-7 h-7 flex items-center text-black justify-center rounded-full bg-white" href="#">
+                                <i class="ri-add-line"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="w-60">
+                        <div class="w-full h-52 flex items-center justify-center ">
+                            <img class="h-[12rem]" src="images/shirt.avif" alt="Men's Jeans">
+                        </div>
+                        <div class="flex justify-between bg-[#1a3c5e] items-center px-4 py-4 text-[#ffffff]">
+                            <div>
+                                <h3>Formal Brown Shirt</h3>
+                                <h4>₹ 2,199</h4>
+                            </div>
+                            <a class="w-7 h-7 flex items-center text-black justify-center rounded-full bg-white" href="#">
+                                <i class="ri-add-line"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="w-60">
+                        <div class="w-full h-52 flex items-center justify-center ">
+                            <img class="h-[12rem]" src="images/BlueShirt.webp" alt="Men's T-Shirt">
+                        </div>
+                        <div class="flex justify-between bg-[#2d2d2d] items-center px-4 py-4 text-[#ffffff]">
+                            <div>
+                                <h3>Formal Blue Shirt</h3>
+                                <h4>₹ 699</h4>
+                            </div>
+                            <a class="w-7 h-7 flex items-center text-black justify-center rounded-full bg-white" href="#">
+                                <i class="ri-add-line"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="w-60">
+                        <div class="w-full h-52 flex items-center justify-center bg-[#dce8dc]">
+                            <img class="h-[12rem]" src="/images/denim.webp" alt="Men's Jacket">
+                        </div>
+                        <div class="flex justify-between bg-[#2a4a2a] items-center px-4 py-4 text-[#ffffff]">
+                            <div>
+                                <h3>Denim Jacket</h3>
+                                <h4>₹ 3,499</h4>
+                            </div>
+                            <a class="w-7 h-7 flex items-center text-black justify-center rounded-full bg-white" href="#">
+                                <i class="ri-add-line"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="w-60">
+                        <div class="w-full h-52 flex items-center justify-center bg-[#ede8f5]">
+                            <img class="h-[12rem]" src="/images/Compression.webp" alt="Men's Chinos">
+                        </div>
+                        <div class="flex justify-between bg-[#4a3f6b] items-center px-4 py-4 text-[#ffffff]">
+                            <div>
+                                <h3>Compression T-Shirt</h3>
+                                <h4>₹ 1,799</h4>
+                            </div>
+                            <a class="w-7 h-7 flex items-center text-black justify-center rounded-full bg-white" href="#">
+                                <i class="ri-add-line"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="w-60">
+                        <div class="w-full h-52 flex items-center justify-center bg-[#fce8d8]">
+                            <img class="h-[12rem]" src="/images/tshirt.webp" alt="Men's Polo">
+                        </div>
+                        <div class="flex justify-between bg-[#7a3b1e] items-center px-4 py-4 text-[#ffffff]">
+                            <div>
+                                <h3>Polo T-Shirt</h3>
+                                <h4>₹ 999</h4>
+                            </div>
+                            <a class="w-7 h-7 flex items-center text-black justify-center rounded-full bg-white" href="#">
+                                <i class="ri-add-line"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="w-60">
+                        <div class="w-full h-52 flex items-center justify-center bg-[#e5e5e5]">
+                            <img class="h-[12rem]" src="/images/blazer.jpeg" alt="Men's Blazer">
+                        </div>
+                        <div class="flex justify-between bg-[#1c1c1c] items-center px-4 py-4 text-[#ffffff]">
+                            <div>
+                                <h3>Blazer</h3>
+                                <h4>₹ 2,499</h4>
+                            </div>
+                            <a class="w-7 h-7 flex items-center text-black justify-center rounded-full bg-white" href="#">
+                                <i class="ri-add-line"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="w-60">
+                        <div class="w-full h-52 flex items-center justify-center bg-[#e0ece4]">
+                            <img class="h-[12rem]" src="/images/track.jpg" alt="Men's Track Pants">
+                        </div>
+                        <div class="flex justify-between bg-[#1e4d2b] items-center px-4 py-4 text-[#ffffff]">
+                            <div>
+                                <h3>Track Pants</h3>
+                                <h4>₹ 1,199</h4>
+                            </div>
+                            <a class="w-7 h-7 flex items-center text-black justify-center rounded-full bg-white" href="#">
+                                <i class="ri-add-line"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- End Men's Static Product Cards -->
+
+                    <p class="flex items-center justify-center text-gray-500 ">And Many More Coming Soon...</p>
+            </div>
+        </div>
+    </div>
+    <%- include('./partials/footer') %>

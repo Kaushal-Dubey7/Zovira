@@ -1,0 +1,55 @@
+<%- include('./partials/header') %>
+<%- include('./partials/flash') %>
+<hr class="border-black my-4">
+    <p class="ml-5 mb-4 text-3xl font-helvetica">Heyy, <%=user.fullname %>👋</p>    
+    <div class="w-full h-screen flex items-start px-20 py-15">
+        <div class="w-[25%] flex h-screen flex-col items-start">
+            <div class="flex items-center gap-2">
+                <h3>sort by</h3>
+                <form action="/shop">
+                    <select class="border-[1px] px-2 py-1" name="sortby" id="">
+                        <option class="select-disabled"value="popular">Select</option>
+                        <option value="/male">Male Section</option>
+                        <option value="/female">Female Section</option>
+                    </select>
+                </form>
+            </div>
+            <div class="flex flex-col mt-20">
+                <a class="block w-fit mb-2" href="/newCollection">New Collection</a>
+                <a class="block w-fit mb-2" href="/shop">All Products</a>
+                <a class="block w-fit mb-2" href="/newCollection ">Discounted Products</a>
+            </div>
+            <div class="mt-32">
+                <a class="block w-fit mb-2" href="/men">Men's Section </a>
+                <a class="block w-fit mb-2" href="/women">Women's Section</a>
+                <a class="block w-fit mb-2" href="/bags">Bagpacks</a>
+            </div>
+        </div>
+        <div class="w-[75%] flex flex-col gap-5 h-screen">
+            <div class="grid grid-cols-4 gap-6">
+                <% products.forEach(function(product){ %>
+                    <div class="w-60 ">
+                        <div class="w-full h-52 flex items-center justify-center bg-[<%= product.bgcolor %>]">
+                            <img class="h-[12rem]" src="data:image/jpeg;base64,<%= product.image.toString('base64') %>"
+                                alt="">
+                        </div>
+                        <div
+                            class="flex justify-between bg-[<%= product.panelcolor %>] items-center px-4 py-4 text-[<%= product.textcolor %>]">
+                            <div>
+                                <h3>
+                                    <%= product.name %>
+                                </h3>
+                                <h4>₹ <%= product.price %>
+                                </h4>
+                            </div>
+                            <a class="w-7 h-7 flex items-center text-black justify-center rounded-full bg-white" href="/addtocart/<%= product._id %>">
+                                <i class="ri-add-line"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <% }) %>
+                    <p class="flex items-center justify-center text-gray-500 ">And Many More Coming Soon...</p>
+            </div>
+        </div>
+    </div>
+    <%- include('./partials/footer') %>

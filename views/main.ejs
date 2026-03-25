@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Zovira</title>
+
+    <!-- Tailwind Browser CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- Tailwind Config (Helvetica) -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        helvetica: [
+                            'Helvetica Neue',
+                            'Helvetica',
+                            'Arial',
+                            'system-ui',
+                            'sans-serif'
+                        ],
+                    },
+                },
+            },
+        };
+    </script>
+
+    <!-- Ticker Animation -->
+    <style>
+        @keyframes ticker {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+    </style>
+</head>
+
+<body class="font-helvetica">
+    <nav class="bg-gray-100 text-black w-full h-14 flex justify-between items-center">
+        <h3 class="text-3xl font-light ml-5 p-2">Zovira</h3>
+        <a href="/start">
+        <button class="mr-5 px-4 py-2 bg-blue-400 rounded
+             hover:bg-white hover:text-blue-500 hover:scale-105
+             transition duration-300 shadow-lg text-white">
+            Login / Sign Up
+        </button>
+        </a>
+    </nav>
+    <main>
+        <section class="m-8 text-center">
+            <h1 class="text-6xl font-light mb-6">
+                Welcome to <span class="text-blue-500">Zovira</span>
+            </h1>
+
+            <h3 class="text-4xl mb-10">
+                Your Ultimate Shopping Destination
+            </h3>
+            <div class="overflow-hidden w-full">
+                <div class="flex whitespace-nowrap animate-[ticker_20s_linear_infinite]">
+
+                    <p class="text-2xl font-light mr-16">
+                        Discover amazing products, exclusive deals, and seamless shopping experience.
+                        Shop from thousands of products with fast delivery.
+                    </p>
+
+                    <p class="text-2xl font-light mr-16">
+                        Discover amazing products, exclusive deals, and seamless shopping experience.
+                        Shop from thousands of products with fast delivery.
+                    </p>
+
+                </div>
+            </div>
+        </section>
+        <section class="grid grid-cols-4 mb-10 gap-6 px-8">
+            <div class="min-h-40 bg-blue-500 text-white flex flex-col justify-center
+               p-5 shadow-xl rounded
+               hover:scale-110 hover:bg-blue-100 hover:text-blue-500
+               transition duration-300">
+                <h3 class="text-2xl font-bold">Wide Range</h3>
+                <p class="text-xl">1000+ Products</p>
+            </div>
+
+            <div class="min-h-40 bg-blue-500 text-white flex flex-col justify-center
+               p-5 shadow-xl rounded
+               hover:scale-110 hover:bg-blue-100 hover:text-blue-500
+               transition duration-300">
+                <h3 class="text-2xl font-bold">Top Quality</h3>
+                <p class="text-xl">Premium Quality Products</p>
+            </div>
+
+            <div class="min-h-40 bg-blue-500 text-white flex flex-col justify-center
+               p-5 shadow-xl rounded
+               hover:scale-110 hover:bg-blue-100 hover:text-blue-500
+               transition duration-300">
+                <h3 class="text-2xl font-bold">Fast Delivery</h3>
+                <p class="text-xl">Express Shipping Available</p>
+            </div>
+
+            <div class="min-h-40 bg-blue-500 text-white flex flex-col justify-center
+               p-5 shadow-xl rounded
+               hover:scale-110 hover:bg-blue-100 hover:text-blue-500
+               transition duration-300">
+                <h3 class="text-2xl font-bold">Secure Payment</h3>
+                <p class="text-xl">Safe & Secure Transactions</p>
+            </div>
+
+        </section>
+        <section class="bg-white  text-center mb-10">
+            <h2 class="text-3xl font-semibold mb-10">
+                Why Choose Zovira?
+            </h2>
+
+            <div class="flex justify-center gap-15">
+                <div>
+                    <p class="text-4xl font-bold text-blue-600">50K+</p>
+                    <p>Happy Customers</p>
+                </div>
+                <div>
+                    <p class="text-4xl font-bold text-blue-600">24/7</p>
+                    <p>Support</p>
+                </div>
+                <div>
+                    <p class="text-4xl font-bold text-blue-600">99%</p>
+                    <p>Secure Payments</p>
+                </div>
+            </div>
+        </section>
+        <section class="bg-blue-50 py-16 text-center">
+            <h2 class="text-4xl font-semibold mb-4">
+                Ready to start shopping?
+            </h2>
+            <p class="text-lg mb-6 text-gray-600">
+                Join thousands of happy customers on Zovira.
+            </p>
+            <a href="/start">
+            <button class="px-8 py-3 bg-blue-500 text-white rounded-lg
+           hover:bg-blue-600 hover:scale-105 transition">
+                Get Started →
+            </button>
+            </a>
+            </section>
+        </section>
+    </main>
+    <footer class="bg-gray-100 text-center py-6">
+        <h3 class="text-xl font-semibold">Zovira</h3>
+        <p>Your Trusted Shopping Partner</p>
+        <p class="text-sm text-gray-500">
+            © 2026 Zovira. All rights reserved.
+        </p>
+    </footer>
+</body>
+</html>

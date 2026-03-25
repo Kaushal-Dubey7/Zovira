@@ -1,9 +1,12 @@
 const mongoose = require('mongoose');
+const config = require('config');
+const dbgr = require('debug')("development:mongoose");
+
 
 mongoose
-.connect("mongodb://127.0.0.1:27017/scatch")
+.connect(`${config.get("MONGODB_URI")}/zovira`)
 .then(function(){
-    console.log("Connected to MongoDB successfully");
+    dbgr("Connected to MongoDB successfully");
 })
 .catch(function(err){
     console.log("Error connecting to MongoDB:", err);
